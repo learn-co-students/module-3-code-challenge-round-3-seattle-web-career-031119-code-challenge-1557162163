@@ -61,9 +61,9 @@ headers: {
   - Each comment should have a delete button. Sample markup for a comment might look like this:
 
 ```html
-<li>
-  <p>MY COOL NEW COMMENT</p>
-  <button type="button" name="button">Delete</button>
+<li class="list-group-item">
+  <span>YOUR COMMENT</span>
+  <button class="btn btn-danger btn-sm">Delete</button>
 </li>
 ```
 
