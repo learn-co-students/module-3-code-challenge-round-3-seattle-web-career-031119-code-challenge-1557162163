@@ -8,8 +8,43 @@
 
 ## Instructions
 
-We're building out a comment feature for our appliction. A user should be able to create a new comment and add that comment to a `comments list`. The comments list can be filtered via a keyword.
+We're building out a comment feature for our application. A user should be able to create a new comment and add that comment to a `comments list`. The comments list can be filtered via a keyword.
 
+---
+
+## Running the Server
+
+Instead of actually accessing the data from a remote API, this challenge uses a package called [json-server](https://github.com/typicode/json-server) to create a fake API for development and testing.
+
+It is very easy to set-up.
+
+1 - Run the command `$ npm install -g json-server` in the command line from this directory
+
+2 - Run  `$ json-server --watch db.json`
+
+That's it. You will have a server running on `localhost:3000` that serves the JSON data contained in the `db.json` file.
+
+*Troubleshooting: If this fails, be sure you don't already have something running on port 3000*
+
+This server will follow normal RESTful routing conventions and will responde with JSON. The endpoints available to you are listed below:
+
+| HTTP Verb | Endpoint        | Response                  | Required Params                             |
+| :-------- | :-------------- | :------------------------ | :------------------------------------------ |
+| `GET`     | `/comments`     | all comments              | none                                        |
+| `GET`     | `/comments/:id` | a single comment          | comment id in url                           |
+| `POST`    | `/comments`     | the newly created comment | `content` key in body                       |
+| `PATCH`   | `/comments/:id` | the updated comment       | `content` key in body and comment id in url |
+| `DELETE`  | `/comments/:id` | empty object `{}`         | comment id in url                           |
+
+
+Don't forget to specify the `headers` when sending JSON to the server:
+
+```js
+headers: {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+```
 ---
 
 ## Deliverables
@@ -20,31 +55,24 @@ We're building out a comment feature for our appliction. A user should be able t
 
 ---
 
+- When the page loads, a user should be able to see all of the already existing comments on the page.
+
 - A user should be able to fill out the comment field, submit the form, and append their new comment to the page as a list item.
   - Each comment should have a delete button. Sample markup for a comment might look like this:
 
 ```html
 <li>
-  YOUR COMMENT HERE
-  <button type="button" name="button">X</button>
+  <p>MY COOL NEW COMMENT</p>
+  <button type="button" name="button">Delete</button>
 </li>
 ```
 
+- A user should be able to type a search term into the filter comments input
+  - The comments list should **only display comments _containing_ the search term**
+  - If the user clears the filter input, all comments should be displayed again.
 
-3. If a user provides a search term into the 'Filter comments' input field, the comments list should automatically display only comments containing the filtering term. (Hint: You could use a "keyup" event bound to the comments filtering input field).
+- A user should be able to delete a particular comment by clicking the delete button. These changes should be present in both the DOM and the server.
 
-  - If the user clears the filtering input all comments should be displayed again.
+- A user should be able to edit a particular comment. How you choose to implement this is up to you. You could create a new form on the page, change the comment to an `<input>` tag, pre-fill the already existing form, or use a modal.
 
-### Part Two - Refactoring with Constructors and Prototypes (feel free to use either ES5 or ES6)
-
-**Note** When creating constructors and prototypes, you may use ES6 classes or just create the constructor function separately. Your choice.
-
-1. **Create your refactored OO Solution in a new file.(`index.js`)**
-2. Code your solution in `comment.js` and `commentList.js`
-3. The commment class should support the following api: `new Comment('Comment text')`
-4. Instances of comments should have a method called 'render' that returns a string representing an `li` HTML element containing the comment's text.
-5. The comment lists class `commentList.js` should have a comments array. The initializer should be able to take an array of strings and convert them to comments
-6. Instances of CommentList should have a method called 'render' that returns a string of a `ul`. Inside of the ul, the comment list should include the return value of the render method of all of it's comments.
-7. Instances of CommentList should have a method called 'addComment' that takes in a string. It should instantiate a new Comment and add it to the CommentList's array of comments.
-8. Implement a filter functionality for your comment list.
-9. Implement a delete functionality on each comment.
+Good luck!
