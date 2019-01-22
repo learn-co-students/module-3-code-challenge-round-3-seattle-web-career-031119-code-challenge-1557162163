@@ -59,7 +59,7 @@ headers: {
 - When the page loads, a user should be able to see all of the already existing comments on the page.
 
 - A user should be able to fill out the comment field, submit the form, and see their new comment on the page as a list item.
-  - **🗝MAJOR KEY ALERT🔑** `json-server` does not have any validations. If you accidentally create blank or invalid comments, feel free to copy/paste the valid comments found in `db-backup.json` if you need to reset your seed data.
+  - **🗝MAJOR KEY ALERT🔑** `json-server` does not have any validations. In case you accidentally create `undefined`, invalid, or empty comments, you can copy the contents of `db-backup.json` into your `db.json` so you can start with valid seed data.
   - Each comment should have a delete button. Sample markup for a comment might look like this:
 
 ```html
