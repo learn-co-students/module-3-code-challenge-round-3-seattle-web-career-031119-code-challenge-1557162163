@@ -23,22 +23,24 @@
   <body>
     <div class="container">
       <div class="col-md-6 col-md-offset-3">
-        <form id="comment-form">
-          <div class="form-group">
-          <label for="add-comment-input"> <h4>Create a New Comment </h4></label>
-          <input class="form-control" type="text" id="add-comment-input" />
-          <button class="btn btn-success buttons" type="submit" name="comment-button">Create comment</button>
-        </form>
-      </div>
-      <hr>
-        <label for="filter-comments-input"> <h4>Filter Comments: </h4> </label>
-        <input class="form-control" type="text" id="filter-comments-input" />
+        <div class="form-group">
+          <form id="comment-form">
+            <label for="add-comment-input"> <h4>Create a New Comment</h4> </label>
+            <input class="form-control" type="text" id="add-comment-input" />
+            <button class="btn btn-success buttons" type="submit" name="comment-button">Create comment</button>
+          </form>
 
-        <h4>Your comments: <span style="color:red" id="comments-filter-term"></span></h4>
+          <hr />
 
-        <ul id="comment-list" class="list-group">
-          <!-- append comments here -->
-        </ul>
+          <label for="filter-comments-input"> <h4>Filter Comments:</h4> </label>
+          <input class="form-control" type="text" id="filter-comments-input" />
+
+          <h4>Your comments: <span style="color:red" id="comments-filter-term"></span></h4>
+
+          <ul id="comment-list" class="list-group">
+            <!-- append comments here -->
+          </ul>
+        </div>
       </div>
     </div>
   </body>
