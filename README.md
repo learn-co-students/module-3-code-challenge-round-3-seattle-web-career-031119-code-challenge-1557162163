@@ -62,13 +62,14 @@ headers: {
 
 ```html
 <li class="list-group-item">
-  <span>YOUR COMMENT</span>
-  <button class="btn btn-danger btn-sm">Delete</button>
+  <span> a sample comment </span>
+  <button class="btn btn-danger btn-sm pull-right">Delete</button>
 </li>
 ```
 
 - A user should be able to type a search term into the filter comments input
   - The comments list should **only display comments _containing_ the search term**
+  - **MAJOR KEY ALERT** `json-server` does not have any validations. If your `db.json` file has any blank or invalid comments, feel free to copy/paste the valid comments found in `db-backup.json`
   - If the user clears the filter input, all comments should be displayed again.
 
 - A user should be able to delete a particular comment by clicking the delete button. These changes should be present in both the DOM and the server.
