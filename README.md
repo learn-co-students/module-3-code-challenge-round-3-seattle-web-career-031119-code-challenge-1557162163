@@ -52,7 +52,7 @@ headers: {
 
 ### Functionality demo
 
-![Functionality Demo](functionality-demo.gif)
+![Functionality Demo](https://curriculum-content.s3.amazonaws.com/immersive_assessments/module-3/javascript-challenge-comment-maker.gif)
 
 ---
 
