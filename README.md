@@ -69,11 +69,11 @@ headers: {
 </li>
 ```
 
+- A user should be able to delete a particular comment by clicking the delete button. These changes should be present in both the DOM and the server.
+
 - A user should be able to type a search term into the filter comments input
   - The comments list should **only display comments _containing_ the search term**
   - If the user clears the filter input, all comments should be displayed again.
-
-- A user should be able to delete a particular comment by clicking the delete button. These changes should be present in both the DOM and the server.
 
 - A user should be able to edit a particular comment. How you choose to implement this is up to you. You could create a new form on the page, change the comment to an `<input>` tag, or pre-fill the already existing form.
 
